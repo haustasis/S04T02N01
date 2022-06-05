@@ -1,9 +1,16 @@
 package cat.itacademy.barcelonactiva.cognoms.nom.s04.t02.n01.model.domain;
 
-public class Fruita {
+import javax.persistence.*;
 
+@Entity
+@Table(name = "fruites")
+public class Fruita {
+	@Id
+	@GeneratedValue(strategy = GenerationType.AUTO)
 	private int id;
+	@Column(name = "nom")
 	private String nom;
+	@Column(name = "quantitatQuilos")
 	private int quantitatQuilos;
 	
 	public Fruita() {
@@ -11,7 +18,6 @@ public class Fruita {
 	}
 
 	public Fruita(int id, String nom, int quantitatQuilos) {
-		super();
 		this.id = id;
 		this.nom = nom;
 		this.quantitatQuilos = quantitatQuilos;
