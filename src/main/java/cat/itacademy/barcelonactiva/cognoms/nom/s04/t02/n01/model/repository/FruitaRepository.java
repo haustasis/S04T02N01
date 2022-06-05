@@ -6,5 +6,5 @@ import java.util.List;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 public interface FruitaRepository extends JpaRepository<Fruita, Integer> {
-	  List<Fruita> trobaFruitaNom(String nom);
+	 
 	}
