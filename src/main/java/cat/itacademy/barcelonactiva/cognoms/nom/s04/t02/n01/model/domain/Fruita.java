@@ -3,14 +3,10 @@ package cat.itacademy.barcelonactiva.cognoms.nom.s04.t02.n01.model.domain;
 import javax.persistence.*;
 
 @Entity
-@Table(name = "fruites")
 public class Fruita {
 	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)
 	private int id;
-	@Column(name = "nom")
 	private String nom;
-	@Column(name = "quantitatQuilos")
 	private int quantitatQuilos;
 	
 	public Fruita() {

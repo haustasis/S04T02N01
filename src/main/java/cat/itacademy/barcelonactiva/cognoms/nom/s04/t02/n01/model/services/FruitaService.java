@@ -47,8 +47,9 @@ public class FruitaService {
 	}
 	
 	@Transactional
-	public void deleteFruitaById(int id) {
+	public String deleteFruitaById(int id) {
 		fruitaRepository.deleteById(id);
+		return "S'ha esborrat la fruita";
 	}
 	
 	
