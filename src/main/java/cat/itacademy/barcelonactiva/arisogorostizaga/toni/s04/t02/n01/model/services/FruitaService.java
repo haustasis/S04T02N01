@@ -11,25 +11,30 @@ import cat.itacademy.barcelonactiva.arisogorostizaga.toni.s04.t02.n01.model.doma
 import cat.itacademy.barcelonactiva.arisogorostizaga.toni.s04.t02.n01.model.repository.FruitaRepository;
 
 @Service
-public class FruitaService {
+public class FruitaService implements IFruitaService {
+	
 	@Autowired
 	private FruitaRepository fruitaRepository;
 	
+	@Override
 	@Transactional
 	public Fruita addFruita(Fruita fruita) {
 		return fruitaRepository.save(fruita);
 	}
 	
+	@Override
 	@Transactional
 	public Fruita getFruitaById(int id) {
 		return fruitaRepository.findById(id).orElse(null);
 	}
 	
+	@Override
 	@Transactional
 	public List<Fruita> getAllFruita() {
 		return fruitaRepository.findAll();
 	}
 	
+	@Override
 	@Transactional
 	public Fruita updateFruita(Fruita fruita) {
 		Fruita fruitaInitial = null;
@@ -46,6 +51,7 @@ public class FruitaService {
 		return fruitaInitial;
 	}
 	
+	@Override
 	@Transactional
 	public String deleteFruitaById(int id) {
 		fruitaRepository.deleteById(id);
