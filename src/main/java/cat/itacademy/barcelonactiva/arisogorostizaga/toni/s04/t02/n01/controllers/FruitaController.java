@@ -1,4 +1,4 @@
-package cat.itacademy.barcelonactiva.cognoms.nom.s04.t02.n01.controllers;
+package cat.itacademy.barcelonactiva.arisogorostizaga.toni.s04.t02.n01.controllers;
 
 import java.util.List;
 
@@ -14,8 +14,8 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import cat.itacademy.barcelonactiva.cognoms.nom.s04.t02.n01.model.domain.Fruita;
-import cat.itacademy.barcelonactiva.cognoms.nom.s04.t02.n01.model.services.FruitaService;
+import cat.itacademy.barcelonactiva.arisogorostizaga.toni.s04.t02.n01.model.domain.Fruita;
+import cat.itacademy.barcelonactiva.arisogorostizaga.toni.s04.t02.n01.model.services.FruitaService;
 
 @RestController
 @RequestMapping("/fruita")
@@ -25,7 +25,7 @@ public class FruitaController {
 	FruitaService fruitaService;
 	
 	@PostMapping("/add")
-	public ResponseEntity<String> addFruita(@RequestBody Fruita fruita) {
+	public ResponseEntity<String> addFruita(Fruita fruita) {
 		try {
 			fruita = new Fruita(fruita.getId(), fruita.getNom(), fruita.getQuantitatQuilos());
 			fruitaService.addFruita(fruita);
@@ -59,7 +59,7 @@ public class FruitaController {
 	}
 	
 	@PutMapping("/update")
-	public ResponseEntity<?> updateFruita(@RequestBody Fruita fruita){
+	public ResponseEntity<?> updateFruita(Fruita fruita){
 		
 		if(fruitaService.getFruitaById(fruita.getId()) == null) {	
 			return new ResponseEntity<>("No existeix aquesta fruita.", HttpStatus.BAD_REQUEST);
